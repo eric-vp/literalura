@@ -1,11 +1,12 @@
 package br.com.alura.literalura.service;
 
-import br.com.alura.literalura.model.DadosLivro;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ConverteDados implements IConverteDados {
     private ObjectMapper mapper = new ObjectMapper();
+//            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     @Override
     public <T> T obterDados(String json, Class<T> classe) {
